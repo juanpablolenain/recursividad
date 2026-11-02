@@ -1,0 +1,30 @@
+Diseñá un algoritmo recursivo que cuente las apariciones del dígito 7 en un entero no negativo.
+
+FUNCION apariciones(n:entero): entero ES
+  cont: entero;
+  cont:= 0;
+
+  SI n = 0 ENTONCES
+    ESC("Caso base");
+  SINO
+    SI(n MOD 10 = 7) ENTONCES
+      cont:= cont + 1;
+      n:= n DIV 10;
+      apariciones(n);
+    SINO
+      n:= n DIV 10;
+      apariciones(n);
+    FIN_SI;
+  FIN_SI;
+
+  apariciones:= cont;
+
+FIN_FUNCION;
+  
+
+  ESC("El número 7 aparece: ", apariciones, "veces en el número ingresado");
+
+
+*Definición formal del algoritmo
+
+apariciones(n) --> n = 0 entonces es caso base; n > 0, entonces sigo
